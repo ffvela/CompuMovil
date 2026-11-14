@@ -1,0 +1,108 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// SobreCarrera.astro — "¿En qué se diferencia?"
+// Compara la carrera con 3 afines (fichas oficiales) y con Duoc UC
+// usando los mismos indicadores de Mi Futuro. Separa claramente el
+// dato oficial de la interpretación del equipo y de los testimonios.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import BloqueTexto from './BloqueTexto.astro';
+import TestimonioCard from './Testimonio.astro';
+import Cita from './Cita.astro';
+import { bloque, testimoniosDe } from '../lib/contenido';
+
+const comparacion: CollectionEntry<'comparacion'>[] = await getCollection('comparacion');
+const indicadores: CollectionEntry<'indicadores'>[] = await getCollection('indicadores');
+const testimonios = await testimoniosDe('sobre-carrera');
+
+const intro = await bloque('sobre-intro');
+const ponderaciones = await bloque('sobre-ponderaciones');
+const interpretacion = await bloque('sobre-interpretacion');
+const interpretacionIp = await bloque('sobre-ip');
+---
+
+<section id="sobre" class="seccion" aria-labelledby="titulo-sobre">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-sobre" numero="01" pregunta="¿Qué es y en qué se diferencia?" titulo="Sobre la carrera" />
+
+    <BloqueTexto bloque={intro} />
+
+    <h3>Comparación con carreras afines</h3>
+    <!-- El contenedor permite desplazar la tabla en pantallas chicas.
+         tabindex="0" deja enfocarlo con teclado para hacer scroll, y
+         role/aria-label lo anuncian a lectores de pantalla. -->
+    <div class="tabla-scroll" role="region" aria-label="Tabla comparativa de carreras afines" tabindex="0">
+      <table>
+        <caption>Duración formal, grado y enfoque según la ficha oficial de cada carrera</caption>
+        <thead>
+          <tr>
+            <th scope="col">Carrera</th>
+            <th scope="col">Institución</th>
+            <th scope="col">Duración</th>
+            <th scope="col">Grado académico</th>
+            <th scope="col">Enfoque</th>
+            <th scope="col">Fuente</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            comparacion.map((c) => (
+              <tr class={c.data.destacada ? 'fila-destacada' : undefined}>
+                <th scope="row">{c.data.carrera}</th>
+                <td>{c.data.institucion} ({c.data.tipoInstitucion.toLowerCase()})</td>
+                <td>{c.data.duracion}</td>
+                <td>{c.data.grado}</td>
+                <td>{c.data.enfoque}</td>
+                <td><Cita ids={[c.data.cita]} /></td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <BloqueTexto bloque={ponderaciones} />
+
+    <div class="dos-columnas">
+      <BloqueTexto bloque={interpretacion} />
+      <div class="pila">
+        {testimonios.map((t) => <TestimonioCard testimonio={t} />)}
+      </div>
+    </div>
+
+    <h3>¿Universidad o instituto profesional?</h3>
+    <div class="tabla-scroll" role="region" aria-label="Indicadores de Mi Futuro: UTEM y Duoc UC" tabindex="0">
+      <table>
+        <caption>Indicadores de Mi Futuro (2026) para Ingeniería en Informática</caption>
+        <thead>
+          <tr>
+            <th scope="col">Institución</th>
+            <th scope="col">Retención 1.er año</th>
+            <th scope="col">Duración real</th>
+            <th scope="col">Empleabilidad 1.er año</th>
+            <th scope="col">Empleabilidad 2.º año</th>
+            <th scope="col">Ingreso al 4.º año</th>
+            <th scope="col">Fuente</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            indicadores.map((i) => (
+              <tr>
+                <th scope="row">{i.data.institucion}</th>
+                <td>{i.data.retencion}</td>
+                <td>{i.data.duracionReal}</td>
+                <td>{i.data.empleabilidad1}</td>
+                <td>{i.data.empleabilidad2}</td>
+                <td>{i.data.ingreso4}</td>
+                <td><Cita ids={[i.data.cita]} /></td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <BloqueTexto bloque={interpretacionIp} />
+  </div>
+</section>

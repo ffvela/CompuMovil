@@ -1,0 +1,141 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Malla.astro — "¿Qué aprenderé?"
+// Muestra la malla 2026 por semestre. Incluye la ÚNICA isla
+// interactiva del sitio: un filtro por área (ciencias básicas,
+// informática, gestión...).
+//
+// Por qué la isla: en la encuesta, 2 de 6 personas dijeron que las
+// matemáticas podrían frenarlas. El filtro permite ver de un vistazo
+// cuántos ramos de ciencias básicas hay y en qué semestres están.
+//
+// Mejora progresiva: sin JavaScript, la malla se ve completa y los
+// botones del filtro quedan ocultos. El script solo agrega el filtro.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import BloqueTexto from './BloqueTexto.astro';
+import TestimonioCard from './Testimonio.astro';
+import Cita from './Cita.astro';
+import { bloque, testimoniosDe } from '../lib/contenido';
+
+type Ramo = CollectionEntry<'malla'>;
+type Area = Ramo['data']['area'];
+
+const ramos: Ramo[] = await getCollection('malla');
+
+// Nombres visibles de cada área (el JSON guarda una clave corta).
+const NOMBRES_AREA: Record<Area, string> = {
+  'ciencias-basicas': 'Ciencias básicas',
+  informatica: 'Informática',
+  gestion: 'Gestión',
+  'formacion-general': 'Formación general',
+  titulacion: 'Titulación'
+};
+
+// Agrupamos los ramos por semestre: [[1, ramos...], [2, ramos...]].
+const semestres: [number, Ramo[]][] = [...new Set(ramos.map((r) => r.data.semestre))]
+  .sort((a, b) => a - b)
+  .map((s): [number, Ramo[]] => [s, ramos.filter((r) => r.data.semestre === s)]);
+
+// Cantidad de ramos por área, para mostrarla en cada botón del filtro.
+const conteo = (area: Area): number => ramos.filter((r) => r.data.area === area).length;
+const areas: Area[] = Object.keys(NOMBRES_AREA) as Area[];
+
+const fuentes: string[] = [...new Set(ramos.map((r) => r.data.cita))];
+const intro = await bloque('malla-intro');
+const testimonios = await testimoniosDe('plan-estudios');
+---
+
+<section id="malla" class="seccion" aria-labelledby="titulo-malla">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-malla" numero="03" pregunta="¿Qué aprenderé?" titulo="Plan de estudios" />
+
+    <BloqueTexto bloque={intro} />
+
+    <!-- Filtro (oculto hasta que el script confirme que JS funciona). -->
+    <div class="filtro" data-filtro hidden>
+      <p class="filtro__titulo" id="filtro-titulo">Filtrar ramos por área:</p>
+      <div class="filtro__botones" role="group" aria-labelledby="filtro-titulo">
+        <button type="button" class="chip" data-area="todas" aria-pressed="true">Todas ({ramos.length})</button>
+        {
+          areas.map((a) => (
+            <button type="button" class={`chip chip--${a}`} data-area={a} aria-pressed="false">
+              {NOMBRES_AREA[a]} ({conteo(a)})
+            </button>
+          ))
+        }
+      </div>
+      <!-- aria-live: el lector de pantalla anuncia el resultado del filtro. -->
+      <p class="filtro__estado" aria-live="polite" data-estado></p>
+    </div>
+
+    <ol class="malla" aria-label="Malla curricular por semestre">
+      {
+        semestres.map(([numero, lista]) => (
+          <li class="semestre">
+            <h3 class="semestre__titulo">Semestre {numero}</h3>
+            <ul class="semestre__ramos">
+              {lista.map((r) => (
+                <li class={`ramo ramo--${r.data.area}`} data-area={r.data.area}>
+                  <span class="ramo__nombre">{r.data.nombre}</span>
+                  <span class="ramo__area">{NOMBRES_AREA[r.data.area]}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="nota">
+      Malla vigente para quienes ingresan desde 2026 <Cita ids={fuentes} />. La página oficial no informa
+      los créditos SCT (Sistema de Créditos Transferibles) por ramo.
+    </p>
+
+    <div class="pila pila--fila">
+      {testimonios.map((t) => <TestimonioCard testimonio={t} />)}
+    </div>
+  </div>
+</section>
+
+<script>
+  // ── Isla: filtro de la malla ───────────────────────────────────
+  // Astro empaqueta este script y lo carga una sola vez. Está escrito
+  // en TypeScript; los tipos se eliminan al compilar.
+
+  // Buscamos el filtro. Si no existe, no hacemos nada.
+  const filtro = document.querySelector<HTMLElement>('[data-filtro]');
+  const estado = document.querySelector<HTMLElement>('[data-estado]');
+
+  if (filtro && estado) {
+    // 1) Como JS sí funciona, mostramos los botones.
+    filtro.hidden = false;
+
+    const botones = filtro.querySelectorAll<HTMLButtonElement>('button[data-area]');
+    const ramos = document.querySelectorAll<HTMLElement>('.ramo[data-area]');
+
+    // 2) Al hacer clic en un botón, aplicamos el filtro.
+    botones.forEach((boton) => {
+      boton.addEventListener('click', () => {
+        const area: string = boton.dataset.area ?? 'todas';
+
+        // Marcamos qué botón está activo (aria-pressed lo anuncia
+        // como "presionado" a los lectores de pantalla).
+        botones.forEach((b) => b.setAttribute('aria-pressed', String(b === boton)));
+
+        // Atenuamos los ramos que no coinciden, en vez de ocultarlos,
+        // para que se siga viendo en qué semestre está cada área.
+        let visibles = 0;
+        ramos.forEach((ramo) => {
+          const coincide: boolean = area === 'todas' || ramo.dataset.area === area;
+          ramo.classList.toggle('ramo--atenuado', !coincide);
+          if (coincide) visibles++;
+        });
+
+        // Mensaje para lectores de pantalla.
+        estado.textContent =
+          area === 'todas' ? `Mostrando los ${visibles} ramos.` : `${visibles} ramos destacados de esta área.`;
+      });
+    });
+  }
+</script>

@@ -1,0 +1,24 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// EncabezadoSeccion.astro — Título común de cada sección.
+// Patrón: número + pregunta que responde la sección (kicker) y el
+// título como <h2>. La página tiene un solo <h1> (en la portada) y
+// un <h2> por sección, para una jerarquía correcta (WCAG 1.3.1).
+// ─────────────────────────────────────────────────────────────────
+interface Props {
+  /** id del <h2>, para enlazarlo con aria-labelledby. */
+  id: string;
+  /** Número de la sección, ej. "02". */
+  numero: string;
+  /** Pregunta del postulante que responde la sección. */
+  pregunta: string;
+  titulo: string;
+}
+
+const { id, numero, pregunta, titulo } = Astro.props;
+---
+
+<header class="encabezado">
+  <p class="encabezado__kicker"><span aria-hidden="true">{numero} · </span>{pregunta}</p>
+  <h2 id={id}>{titulo}</h2>
+</header>

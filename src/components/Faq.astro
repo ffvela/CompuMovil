@@ -1,0 +1,46 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Faq.astro — Preguntas frecuentes.
+// Cada pregunta sale de una barrera o duda real de la encuesta
+// (Fase B); el campo `origen` lo registra en el JSON.
+// Usamos <details>/<summary>: es un acordeón nativo de HTML, accesible
+// con teclado y que no necesita JavaScript.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import Etiqueta from './Etiqueta.astro';
+import Cita from './Cita.astro';
+import TestimonioCard from './Testimonio.astro';
+import { testimoniosPorId, type Testimonio } from '../lib/contenido';
+
+type Pregunta = CollectionEntry<'faq'>;
+const preguntas: Pregunta[] = await getCollection('faq');
+
+// Para cada pregunta buscamos sus testimonios (si tiene).
+const conTestimonios: { p: Pregunta; t: Testimonio[] }[] = await Promise.all(
+  preguntas.map(async (p) => ({ p, t: await testimoniosPorId(p.data.testimonios ?? []) }))
+);
+---
+
+<section id="faq" class="seccion" aria-labelledby="titulo-faq">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-faq" numero="07" pregunta="Las dudas que nos hicieron" titulo="Preguntas frecuentes" />
+    <p class="nota">Estas preguntas salen de una encuesta que respondieron estudiantes de enseñanza media y otras personas interesadas en la carrera.</p>
+    <div class="faq">
+      {
+        conTestimonios.map(({ p, t }) => (
+          <details class="faq__item">
+            <summary>{p.data.pregunta}</summary>
+            <div class="faq__respuesta">
+              <Etiqueta tipo={p.data.tipo} />
+              <p>
+                {p.data.respuesta} {p.data.citas && <Cita ids={p.data.citas} />}
+              </p>
+              {t.map((x) => <TestimonioCard testimonio={x} />)}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

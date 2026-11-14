@@ -1,0 +1,77 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Admision.astro — "¿Cómo postulo? ¿Cuánto cuesta?"
+// Incluye costos porque "el puntaje" (4/6) y "el costo" (3/6) fueron
+// las barreras más mencionadas en la encuesta.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import BloqueTexto from './BloqueTexto.astro';
+import Etiqueta from './Etiqueta.astro';
+import Cita from './Cita.astro';
+import { bloque } from '../lib/contenido';
+
+const [admision]: CollectionEntry<'admision'>[] = await getCollection('admision');
+if (!admision) throw new Error('Falta src/content/admision.json');
+const { ponderaciones, ponderacionesCita, puntajeMinimo, fechas, fechasCita, enlaceDemre } = admision.data;
+
+const intro = await bloque('admision-intro');
+const costos = await bloque('admision-costos');
+---
+
+<section id="admision" class="seccion" aria-labelledby="titulo-admision">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-admision" numero="05" pregunta="¿Cómo postulo y cuánto cuesta?" titulo="Admisión y costos" />
+
+    <BloqueTexto bloque={intro} />
+
+    <div class="dos-columnas">
+      <div>
+        <h3>Ponderaciones</h3>
+        <Etiqueta tipo="dato" />
+        <table class="tabla-simple">
+          <caption>Peso de cada prueba en el puntaje de postulación <Cita ids={[ponderacionesCita]} /></caption>
+          <thead>
+            <tr><th scope="col">Prueba</th><th scope="col">Peso</th></tr>
+          </thead>
+          <tbody>
+            {
+              ponderaciones.map((p) => (
+                <tr>
+                  <th scope="row">{p.prueba}</th>
+                  <td>
+                    <span class="barra-peso" style={`--valor:${p.porcentaje}`} aria-hidden="true"></span>
+                    {p.porcentaje} %
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+        <p><strong>Puntaje mínimo:</strong> {puntajeMinimo} <Cita ids={[ponderacionesCita]} /></p>
+      </div>
+
+      <div>
+        <h3>Fechas clave del proceso 2027</h3>
+        <Etiqueta tipo="dato" />
+        <ol class="linea-tiempo">
+          {
+            fechas.map((f) => (
+              <li>
+                <span class="linea-tiempo__fecha">{f.fecha}</span>
+                <span>{f.hito}</span>
+              </li>
+            ))
+          }
+        </ol>
+        <p class="nota">Fechas del calendario oficial <Cita ids={[fechasCita]} />.</p>
+        <a class="boton boton--primario" href={enlaceDemre} target="_blank" rel="noopener noreferrer">
+          Ir al sitio del DEMRE <span class="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+      </div>
+    </div>
+
+    <h3>Costos y financiamiento</h3>
+    <BloqueTexto bloque={costos} />
+  </div>
+</section>

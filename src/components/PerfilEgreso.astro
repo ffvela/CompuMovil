@@ -1,0 +1,32 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// PerfilEgreso.astro — "¿Qué podré hacer?"
+// El perfil oficial reescrito en lenguaje claro, en tarjetas.
+// Va justo después de la malla porque la complementa.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import BloqueTexto from './BloqueTexto.astro';
+import Cita from './Cita.astro';
+import { bloque } from '../lib/contenido';
+
+const competencias: CollectionEntry<'perfil'>[] = await getCollection('perfil');
+const intro = await bloque('perfil-intro');
+---
+
+<section id="perfil" class="seccion seccion--alterna" aria-labelledby="titulo-perfil">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-perfil" numero="04" pregunta="¿Qué podré hacer al titularme?" titulo="Perfil de egreso" />
+    <BloqueTexto bloque={intro} />
+    <ul class="tarjetas">
+      {
+        competencias.map((c) => (
+          <li class="tarjeta">
+            <h3>{c.data.titulo}</h3>
+            <p>{c.data.texto} <Cita ids={[c.data.cita]} /></p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

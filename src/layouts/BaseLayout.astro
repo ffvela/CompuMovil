@@ -1,0 +1,65 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// BaseLayout.astro — Estructura común de la página.
+// Concentra el <head> (SEO y Open Graph), el enlace para saltar al
+// contenido, la barra superior y el pie. La página (index.astro) solo
+// aporta las secciones, que llegan por el <slot />.
+// ─────────────────────────────────────────────────────────────────
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  /** Título único de la página (pestaña y buscadores). */
+  title: string;
+  /** Descripción única (aparece bajo el título en Google). */
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+// URL absoluta de esta página y de la imagen para redes sociales.
+// Astro.site viene de astro.config.mjs; si faltara, usamos la URL actual.
+const base: URL = Astro.site ?? Astro.url;
+const canonical: string = new URL(Astro.url.pathname, base).href;
+const imagenOg: string = new URL('/og.png', base).href;
+---
+
+<!doctype html>
+<!-- lang="es-CL": español de Chile. Lo exige el encargo y ayuda a los
+     lectores de pantalla a pronunciar bien. -->
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta name="theme-color" content="#0B2341" />
+
+    <!-- Open Graph: cómo se ve el enlace al compartirlo en WhatsApp,
+         Instagram o Facebook. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imagenOg} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ingeniería en Informática UTEM. Proyecto académico." />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <!-- Enlace para saltar al contenido: quien navega con teclado no
+         tiene que recorrer todo el menú (WCAG 2.4.1). -->
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <Header />
+    <main id="contenido" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

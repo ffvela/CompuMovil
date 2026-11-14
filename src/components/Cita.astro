@@ -1,0 +1,29 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Cita.astro — Cita breve estilo APA, enlazada a Referencias.
+// Ejemplo de salida: (UTEM, 2026; SIES, 2026)
+// Cada parte es un enlace a #ref-F01, #ref-F05, etc., que es el id de
+// la entrada en la sección Referencias (exigencia de la Fase D).
+// ─────────────────────────────────────────────────────────────────
+import { mapaReferencias, type Referencia } from '../lib/contenido';
+
+interface Props {
+  /** IDs de las fuentes citadas, por ejemplo ["F01", "F05"]. */
+  ids: readonly string[];
+}
+
+const { ids } = Astro.props;
+const refs: Map<string, Referencia> = await mapaReferencias();
+
+// Convertimos cada ID en { id, texto }. Si un ID no existe, fallamos:
+// el esquema ya lo valida, pero esto protege también los IDs que se
+// escriben directo en un componente.
+const partes: { id: string; texto: string }[] = ids.map((id) => {
+  const ref: Referencia | undefined = refs.get(id);
+  if (!ref) throw new Error(`Cita a una fuente inexistente: ${id}`);
+  return { id, texto: `${ref.data.autorCorto}, ${ref.data.anio}` };
+});
+---
+
+<!-- Todo en una línea para que no queden espacios dentro de los paréntesis. -->
+<span class="cita">({partes.map((p, i) => <>{i > 0 && '; '}<a href={`#ref-${p.id}`} aria-label={`Fuente: ${p.texto}. Ver en Referencias`}>{p.texto}</a></>)})</span>

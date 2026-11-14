@@ -1,0 +1,21 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// BloqueTexto.astro — Párrafo con su etiqueta de tipo y su cita.
+// Recibe una entrada de la colección "bloques".
+// ─────────────────────────────────────────────────────────────────
+import Etiqueta from './Etiqueta.astro';
+import Cita from './Cita.astro';
+import type { Bloque } from '../lib/contenido';
+
+interface Props {
+  bloque: Bloque;
+}
+
+const { bloque } = Astro.props;
+const { tipo, texto, citas } = bloque.data;
+---
+
+<div class={`bloque bloque--${tipo}`}>
+  <Etiqueta tipo={tipo} />
+  <p>{texto} <Cita ids={citas} /></p>
+</div>

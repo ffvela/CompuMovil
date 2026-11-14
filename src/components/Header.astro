@@ -1,0 +1,38 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Header.astro — Barra superior con navegación.
+// En móvil, el menú usa <details> (se abre y cierra sin JavaScript).
+// No usamos el logo de la UTEM: el sitio no es oficial.
+// ─────────────────────────────────────────────────────────────────
+
+// Enlaces en el mismo orden que las secciones de la página.
+const enlaces: { href: string; texto: string }[] = [
+  { href: '#sobre', texto: 'La carrera' },
+  { href: '#trabajo', texto: 'Trabajo' },
+  { href: '#malla', texto: 'Malla' },
+  { href: '#perfil', texto: 'Perfil' },
+  { href: '#admision', texto: 'Admisión' },
+  { href: '#respaldo', texto: 'Respaldo' },
+  { href: '#faq', texto: 'Preguntas' }
+];
+---
+
+<header class="barra">
+  <div class="contenedor barra__interior">
+    <a class="barra__marca" href="#inicio">Proyecto académico · Computación Móvil</a>
+
+    <nav aria-label="Secciones de la página">
+      <!-- Escritorio: lista visible. -->
+      <ul class="barra__enlaces">
+        {enlaces.map((e) => <li><a href={e.href}>{e.texto}</a></li>)}
+      </ul>
+      <!-- Móvil: menú desplegable nativo. -->
+      <details class="barra__menu">
+        <summary>Menú</summary>
+        <ul>
+          {enlaces.map((e) => <li><a href={e.href}>{e.texto}</a></li>)}
+        </ul>
+      </details>
+    </nav>
+  </div>
+</header>

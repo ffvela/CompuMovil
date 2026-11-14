@@ -1,0 +1,79 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// CampoLaboral.astro — "¿Dónde trabajaré?"
+// Es la tercera sección porque fue lo más pedido en la encuesta
+// (5 de 6 personas). Muestra cifras con año y fuente, y áreas de
+// trabajo según la página oficial.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import BloqueTexto from './BloqueTexto.astro';
+import TestimonioCard from './Testimonio.astro';
+import Etiqueta from './Etiqueta.astro';
+import Cita from './Cita.astro';
+import { bloque, testimoniosDe } from '../lib/contenido';
+
+type Item = CollectionEntry<'campoLaboral'>;
+const items: Item[] = await getCollection('campoLaboral');
+
+// Separamos las cifras de las áreas usando el campo `tipo`.
+// El "type guard" (x is ...) le dice a TypeScript qué campos tiene
+// cada grupo, sin recurrir a `any`.
+type Cifra = Extract<Item['data'], { tipo: 'cifra' }>;
+type Area = Extract<Item['data'], { tipo: 'area' }>;
+const cifras: Cifra[] = items.map((i) => i.data).filter((d): d is Cifra => d.tipo === 'cifra');
+const areas: Area[] = items.map((i) => i.data).filter((d): d is Area => d.tipo === 'area');
+
+const testimonios = await testimoniosDe('campo-laboral');
+const intro = await bloque('trabajo-intro');
+const glosario = await bloque('trabajo-glosario');
+const duracion = await bloque('trabajo-duracion');
+const empleadores = await bloque('trabajo-empleadores');
+---
+
+<section id="trabajo" class="seccion seccion--alterna" aria-labelledby="titulo-trabajo">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-trabajo" numero="02" pregunta="¿Dónde trabajaré y cuánto se gana?" titulo="Campo laboral" />
+
+    <BloqueTexto bloque={intro} />
+
+    <div class="cifras">
+      <Etiqueta tipo="dato" />
+      <ul class="cifras__lista">
+        {
+          cifras.map((c) => (
+            <li class="cifra">
+              <span class="cifra__valor">{c.valor}</span>
+              <span class="cifra__titulo">{c.titulo}</span>
+              <span class="cifra__fuente">
+                Dato {c.anio} <Cita ids={[c.cita]} />
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <BloqueTexto bloque={glosario} />
+    <BloqueTexto bloque={duracion} />
+
+    <h3>Áreas de trabajo</h3>
+    <ul class="tarjetas">
+      {
+        areas.map((a) => (
+          <li class="tarjeta">
+            <h4>{a.titulo}</h4>
+            <p>{a.texto} <Cita ids={[a.cita]} /></p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="dos-columnas">
+      <BloqueTexto bloque={empleadores} />
+      <div class="pila">
+        {testimonios.map((t) => <TestimonioCard testimonio={t} />)}
+      </div>
+    </div>
+  </div>
+</section>

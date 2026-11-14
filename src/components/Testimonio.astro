@@ -1,0 +1,24 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Testimonio.astro — Opinión personal de un integrante del equipo.
+// Usamos <figure> + <blockquote> + <figcaption>, que es la forma
+// semántica correcta de una cita atribuida a una persona.
+// ─────────────────────────────────────────────────────────────────
+import Etiqueta from './Etiqueta.astro';
+import type { Testimonio } from '../lib/contenido';
+
+interface Props {
+  testimonio: Testimonio;
+}
+
+const { testimonio } = Astro.props;
+const { autor, rol, texto } = testimonio.data;
+---
+
+<figure class="testimonio">
+  <Etiqueta tipo="opinion" />
+  <blockquote>
+    <p>{texto}</p>
+  </blockquote>
+  <figcaption><strong>{autor}</strong>, {rol}</figcaption>
+</figure>

@@ -1,0 +1,28 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Respaldo.astro — "¿Qué garantías hay?"
+// Certificación de la carrera, acreditación de la universidad,
+// cuerpo académico y campus. Va después de Admisión porque en la
+// encuesta fue de lo que menos se preguntó (2 de 6).
+// ─────────────────────────────────────────────────────────────────
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import BloqueTexto from './BloqueTexto.astro';
+import TestimonioCard from './Testimonio.astro';
+import { bloquesDe, testimoniosDe } from '../lib/contenido';
+
+const bloques = await bloquesDe('respaldo');
+const testimonios = await testimoniosDe('respaldo');
+---
+
+<section id="respaldo" class="seccion seccion--alterna" aria-labelledby="titulo-respaldo">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-respaldo" numero="06" pregunta="¿Qué garantías tiene?" titulo="Respaldo institucional" />
+    <div class="tarjetas tarjetas--bloques">
+      {bloques.map((b) => <BloqueTexto bloque={b} />)}
+    </div>
+    <h3>Cómo es el día a día, según nosotros</h3>
+    <div class="pila pila--fila">
+      {testimonios.map((t) => <TestimonioCard testimonio={t} />)}
+    </div>
+  </div>
+</section>

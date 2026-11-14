@@ -1,0 +1,17 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Footer.astro — Pie de página con el aviso de proyecto académico.
+// ─────────────────────────────────────────────────────────────────
+const anio: number = new Date().getFullYear();
+---
+
+<footer class="pie">
+  <div class="contenedor">
+    <p>
+      Sitio desarrollado como proyecto académico del curso Computación Móvil. No es un sitio oficial de la
+      Universidad Tecnológica Metropolitana.
+    </p>
+    <p>Equipo: Felipe Velasquez y Ernesto Baltierra · {anio} · Hecho con Astro</p>
+    <p><a href="#inicio">Volver al inicio</a></p>
+  </div>
+</footer>

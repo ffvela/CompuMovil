@@ -1,0 +1,38 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// index.astro — La única página del sitio (landing page).
+// Solo arma el orden de las secciones; el contenido vive en
+// src/content y cada sección en su propio componente.
+//
+// El orden sale de la encuesta (Fase B, ver INFORME.md):
+//  portada → sobre la carrera → campo laboral (5/6 lo pidieron) →
+//  malla → perfil → admisión y costos → respaldo → preguntas →
+//  referencias.
+// ─────────────────────────────────────────────────────────────────
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SobreCarrera from '../components/SobreCarrera.astro';
+import CampoLaboral from '../components/CampoLaboral.astro';
+import Malla from '../components/Malla.astro';
+import PerfilEgreso from '../components/PerfilEgreso.astro';
+import Admision from '../components/Admision.astro';
+import Respaldo from '../components/Respaldo.astro';
+import Faq from '../components/Faq.astro';
+import Referencias from '../components/Referencias.astro';
+
+const title: string = 'Ingeniería en Informática UTEM: malla, trabajo y admisión 2027';
+const description: string =
+  'Qué es Ingeniería en Informática en la UTEM, en qué se trabaja, cuánto se gana, la malla 2026 y cómo postular, con datos oficiales y sus fuentes.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero />
+  <SobreCarrera />
+  <CampoLaboral />
+  <Malla />
+  <PerfilEgreso />
+  <Admision />
+  <Respaldo />
+  <Faq />
+  <Referencias />
+</BaseLayout>

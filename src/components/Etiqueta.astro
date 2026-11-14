@@ -1,0 +1,17 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Etiqueta.astro — Marca visible del tipo de contenido.
+// La rúbrica pide distinguir dato institucional, interpretación del
+// equipo y testimonio. Usamos texto + color: el texto asegura que la
+// diferencia no dependa solo del color (accesibilidad WCAG 1.4.1).
+// ─────────────────────────────────────────────────────────────────
+import { ETIQUETAS, type TipoContenido } from '../lib/contenido';
+
+interface Props {
+  tipo: TipoContenido;
+}
+
+const { tipo } = Astro.props;
+---
+
+<span class={`etiqueta etiqueta--${tipo}`}>{ETIQUETAS[tipo]}</span>

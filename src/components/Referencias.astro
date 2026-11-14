@@ -1,0 +1,39 @@
+---
+// ─────────────────────────────────────────────────────────────────
+// Referencias.astro — "¿De dónde sale esto?"
+// Lista en APA 7 de las fuentes usadas en el sitio. Cada entrada tiene
+// id="ref-FXX", que es el destino de las citas breves (Cita.astro).
+// Las fuentes que solo se usaron en el informe no aparecen aquí.
+// ─────────────────────────────────────────────────────────────────
+import { getCollection, type CollectionEntry } from 'astro:content';
+import EncabezadoSeccion from './EncabezadoSeccion.astro';
+import { fechaLarga } from '../lib/contenido';
+
+const refs: CollectionEntry<'referencias'>[] = (await getCollection('referencias'))
+  .filter((r) => r.data.secciones.length > 0)
+  // APA 7 ordena alfabéticamente por autor, y luego por año.
+  .sort((a, b) => a.data.autor.localeCompare(b.data.autor, 'es') || a.data.anio - b.data.anio);
+---
+
+<section id="referencias" class="seccion seccion--alterna" aria-labelledby="titulo-referencias">
+  <div class="contenedor">
+    <EncabezadoSeccion id="titulo-referencias" numero="08" pregunta="¿De dónde sale esta información?" titulo="Referencias" />
+    <ol class="referencias">
+      {
+        refs.map((r) => (
+          <li id={`ref-${r.id}`} tabindex="-1">
+            {r.data.autor}. ({r.data.anio}). <em>{r.data.titulo}</em>
+            {r.data.descripcion && ` [${r.data.descripcion}]`}.{' '}
+            <a href={r.data.url} target="_blank" rel="noopener noreferrer">
+              {r.data.url}
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+            <span class="referencias__meta">
+              Consultado el {fechaLarga(r.data.fechaConsulta)} · Fuente {r.data.tipo}
+            </span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
