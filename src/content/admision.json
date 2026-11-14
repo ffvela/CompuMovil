@@ -1,0 +1,57 @@
+[
+  {
+    "id": "admision-2027",
+    "ponderaciones": [
+      {
+        "prueba": "Notas de Enseñanza Media (NEM)",
+        "porcentaje": 10
+      },
+      {
+        "prueba": "Ranking de notas",
+        "porcentaje": 25
+      },
+      {
+        "prueba": "Competencia Lectora",
+        "porcentaje": 20
+      },
+      {
+        "prueba": "Competencia Matemática 1 (M1)",
+        "porcentaje": 30
+      },
+      {
+        "prueba": "Competencia Matemática 2 (M2)",
+        "porcentaje": 5
+      },
+      {
+        "prueba": "Electiva de Ciencias o de Historia y Ciencias Sociales",
+        "porcentaje": 10
+      }
+    ],
+    "ponderacionesCita": "F01",
+    "puntajeMinimo": "458 puntos (promedio entre Competencia Lectora y M1)",
+    "fechas": [
+      {
+        "fecha": "30 nov, 1 y 2 dic 2026",
+        "hito": "Rendición de la PAES Regular"
+      },
+      {
+        "fecha": "4 ene 2027",
+        "hito": "Resultados de la PAES"
+      },
+      {
+        "fecha": "4 al 7 ene 2027",
+        "hito": "Postulación a las universidades (hasta las 13:00 del día 7)"
+      },
+      {
+        "fecha": "18 ene 2027",
+        "hito": "Resultados de selección"
+      },
+      {
+        "fecha": "Desde el 19 ene 2027",
+        "hito": "Matrícula, primer periodo"
+      }
+    ],
+    "fechasCita": "F06",
+    "enlaceDemre": "https://demre.cl/"
+  }
+]

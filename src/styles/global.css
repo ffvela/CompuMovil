@@ -1,0 +1,742 @@
+/* ─────────────────────────────────────────────────────────────────
+   global.css — Estilos de todo el sitio (CSS propio, sin frameworks).
+
+   Organización:
+   1. Variables (colores UTEM, tipografía, espacios)
+   2. Base (reset mínimo, tipografía, enlaces, foco)
+   3. Utilidades (contenedor, sr-only, saltar al contenido)
+   4. Componentes (barra, portada, secciones, tablas, malla...)
+   5. Responsivo (desde 768 px y 1280 px)
+   6. Preferencias del usuario (movimiento reducido)
+
+   Diseñamos "mobile first": los estilos base son para celular
+   (360 px) y las media queries agregan cambios para pantallas
+   más grandes.
+   ───────────────────────────────────────────────────────────────── */
+
+/* ── 1. Variables ──────────────────────────────────────────────── */
+:root {
+  /* Colores del Manual de Identidad Visual UTEM (2025). */
+  --azul: #004eaa;          /* Azul UTEM: 7,86:1 sobre blanco */
+  --azul-oscuro: #0b2341;   /* Azul complementario: texto principal */
+  --verde-utem: #78bf26;    /* SOLO decoración: 2,26:1 sobre blanco */
+  --verde-texto: #3f6b12;   /* Variante propia para texto: 6,3:1 */
+  --blanco: #ffffff;
+
+  /* Neutros y fondos suaves (verificados con texto oscuro encima). */
+  --gris-texto: #44505e;
+  --gris-borde: #d5dbe3;
+  --fondo-alterno: #f3f6fa;
+  --fondo-dato: #e6eef8;
+  --fondo-interpretacion: #eef6e4;
+  --fondo-opinion: #f1f1f1;
+
+  /* Tipografía del sistema: no descargamos fuentes, así la página
+     carga más rápido (mejor puntaje de Rendimiento). */
+  --fuente: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --radio: 10px;
+  --ancho-max: 72rem;
+  --espacio: clamp(1rem, 4vw, 2rem);
+}
+
+/* ── 2. Base ───────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* el ancho incluye el padding y el borde */
+}
+
+html {
+  scroll-behavior: smooth; /* desplazamiento suave al usar el menú */
+  scroll-padding-top: 4.5rem; /* que la barra fija no tape los títulos */
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1.0625rem; /* 17 px: cómodo para leer en celular */
+  line-height: 1.6;
+  color: var(--azul-oscuro);
+  background: var(--blanco);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+h3 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--azul);
+  text-underline-offset: 0.15em;
+}
+
+/* Foco visible y grueso para quien navega con teclado (WCAG 2.4.7). */
+:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+caption {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+  padding-bottom: 0.5rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+thead th {
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+}
+
+/* ── 3. Utilidades ─────────────────────────────────────────────── */
+.contenedor {
+  width: min(100% - 2 * var(--espacio), var(--ancho-max));
+  margin-inline: auto;
+}
+
+/* Oculto a la vista, pero lo leen los lectores de pantalla. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* El enlace "Saltar al contenido" aparece solo al recibir foco. */
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio);
+}
+
+.saltar:focus {
+  top: 1rem;
+}
+
+.nota {
+  font-size: 0.95rem;
+  color: var(--gris-texto);
+}
+
+/* ── 4. Componentes ────────────────────────────────────────────── */
+
+/* Barra superior fija */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--azul-oscuro);
+  border-bottom: 4px solid var(--verde-utem); /* verde solo como detalle */
+}
+
+.barra__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+}
+
+.barra a {
+  color: var(--blanco);
+}
+
+.barra__marca {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.barra__enlaces {
+  display: none; /* en móvil se usa el menú desplegable */
+}
+
+.barra__menu summary {
+  cursor: pointer;
+  color: var(--blanco);
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--blanco);
+  border-radius: var(--radio);
+  min-height: 44px; /* área táctil mínima recomendada */
+  display: flex;
+  align-items: center;
+}
+
+.barra__menu ul {
+  position: absolute;
+  right: var(--espacio);
+  margin: 0.5rem 0 0;
+  padding: 0.5rem;
+  list-style: none;
+  background: var(--azul-oscuro);
+  border-radius: var(--radio);
+  min-width: 12rem;
+}
+
+.barra__menu a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+}
+
+/* Portada */
+.hero {
+  background: linear-gradient(160deg, var(--azul-oscuro) 0%, var(--azul) 100%);
+  color: var(--blanco);
+  padding-block: 3rem;
+}
+
+.hero a:not(.boton) {
+  color: var(--blanco);
+}
+
+.hero__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 8vw, 3.5rem);
+}
+
+.hero__bajada {
+  font-size: 1.15rem;
+  max-width: 36rem;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1.5rem;
+}
+
+.hero__aviso {
+  font-size: 0.95rem;
+  border-left: 4px solid var(--verde-utem);
+  padding-left: 0.75rem;
+}
+
+.hero__datos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.dato {
+  background: rgb(255 255 255 / 0.1);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: var(--radio);
+  padding: 0.75rem;
+}
+
+.dato dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dato dd {
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+}
+
+/* Botones */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.boton--primario {
+  background: var(--azul);
+  color: var(--blanco);
+  border: 2px solid var(--blanco);
+}
+
+.hero .boton--primario {
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+}
+
+.boton--secundario {
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+}
+
+/* Secciones */
+.seccion {
+  padding-block: 3.5rem;
+}
+
+.seccion--alterna {
+  background: var(--fondo-alterno);
+}
+
+.encabezado {
+  margin-bottom: 1.5rem;
+}
+
+.encabezado__kicker {
+  color: var(--verde-texto); /* verde accesible para texto */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.encabezado h2 {
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid var(--verde-utem);
+  display: inline-block;
+}
+
+/* Etiquetas de tipo de contenido */
+.etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.4rem;
+}
+
+.etiqueta--dato {
+  background: var(--fondo-dato);
+  color: var(--azul-oscuro);
+}
+
+.etiqueta--interpretacion {
+  background: var(--fondo-interpretacion);
+  color: var(--verde-texto);
+}
+
+.etiqueta--opinion {
+  background: var(--fondo-opinion);
+  color: var(--gris-texto);
+}
+
+/* Bloques de texto, con un borde de color según el tipo */
+.bloque {
+  border-left: 4px solid var(--azul);
+  padding-left: 1rem;
+  margin-block: 1.25rem;
+  max-width: 48rem;
+}
+
+.bloque--interpretacion {
+  border-left-color: var(--verde-utem);
+}
+
+.bloque--opinion {
+  border-left-color: var(--gris-borde);
+}
+
+.cita {
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+/* Testimonios */
+.testimonio {
+  margin: 0;
+  background: var(--blanco);
+  border: 1px dashed var(--gris-texto);
+  border-radius: var(--radio);
+  padding: 1rem;
+}
+
+.testimonio blockquote {
+  margin: 0.25rem 0 0.5rem;
+  font-style: italic;
+}
+
+.testimonio figcaption {
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+}
+
+.pila {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.dos-columnas {
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 1.5rem;
+}
+
+/* Tablas con desplazamiento horizontal en pantallas chicas */
+.tabla-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  margin-block: 1rem;
+}
+
+.tabla-scroll table {
+  min-width: 44rem;
+}
+
+.fila-destacada {
+  background: var(--fondo-dato);
+}
+
+/* Barra horizontal dentro de la tabla de ponderaciones. Su ancho
+   sale de la variable --valor (el porcentaje), definida en el HTML. */
+.barra-peso {
+  display: inline-block;
+  height: 0.6rem;
+  width: calc(var(--valor) * 0.15rem);
+  background: var(--azul);
+  border-radius: 999px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Cifras de campo laboral */
+.cifras__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+}
+
+.cifra {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-top: 4px solid var(--azul);
+  border-radius: var(--radio);
+  padding: 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.cifra__valor {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--azul);
+  line-height: 1.15;
+}
+
+.cifra__fuente {
+  font-size: 0.85rem;
+  color: var(--gris-texto);
+}
+
+/* Tarjetas (áreas de trabajo, perfil de egreso) */
+.tarjetas {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+}
+
+.tarjeta h3,
+.tarjeta h4 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.tarjetas--bloques .bloque {
+  margin: 0;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  padding: 1rem;
+}
+
+/* Malla y filtro */
+.filtro {
+  margin-block: 1.5rem;
+}
+
+.filtro__titulo {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.filtro__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  font: inherit;
+  font-size: 0.9rem;
+  min-height: 44px;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--azul);
+  background: var(--blanco);
+  color: var(--azul);
+  cursor: pointer;
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+.filtro__estado {
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+  margin-top: 0.5rem;
+}
+
+.malla {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.semestre {
+  background: var(--fondo-alterno);
+  border-radius: var(--radio);
+  padding: 1rem;
+}
+
+.semestre__titulo {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.semestre__ramos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ramo {
+  background: var(--blanco);
+  border-left: 5px solid var(--gris-borde);
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  display: grid;
+  transition: opacity 0.2s;
+}
+
+.ramo__nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.ramo__area {
+  font-size: 0.78rem;
+  color: var(--gris-texto);
+}
+
+/* Cada área tiene su color de borde (el nombre del área también se
+   escribe, así que no dependemos solo del color). */
+.ramo--ciencias-basicas { border-left-color: #b45309; }
+.ramo--informatica { border-left-color: var(--azul); }
+.ramo--gestion { border-left-color: var(--verde-utem); }
+.ramo--formacion-general { border-left-color: #7c3aed; }
+.ramo--titulacion { border-left-color: var(--azul-oscuro); }
+
+.ramo--atenuado {
+  opacity: 0.25;
+}
+
+.pila--fila {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin-top: 1.5rem;
+}
+
+/* Línea de tiempo de admisión */
+.linea-tiempo {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  border-left: 3px solid var(--verde-utem);
+}
+
+.linea-tiempo li {
+  padding: 0 0 1rem 1rem;
+  display: grid;
+}
+
+.linea-tiempo__fecha {
+  font-weight: 700;
+  color: var(--azul);
+}
+
+/* Preguntas frecuentes */
+.faq {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq__item {
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  background: var(--blanco);
+}
+
+.faq__item summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1rem;
+  min-height: 44px;
+}
+
+.faq__respuesta {
+  padding: 0 1rem 1rem;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+/* Referencias */
+.referencias {
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  overflow-wrap: anywhere; /* evita que las URL largas rompan el ancho */
+}
+
+.referencias li:target {
+  background: var(--fondo-dato); /* resalta la fuente al llegar desde una cita */
+  outline: 2px solid var(--azul);
+  border-radius: 4px;
+}
+
+.referencias__meta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gris-texto);
+}
+
+/* Pie de página */
+.pie {
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+  padding-block: 2rem;
+  font-size: 0.95rem;
+}
+
+.pie a {
+  color: var(--blanco);
+}
+
+/* ── 5. Responsivo ─────────────────────────────────────────────── */
+
+/* Tablet (768 px o más) */
+@media (min-width: 48rem) {
+  .hero__grid {
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+  }
+
+  .dos-columnas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .malla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Escritorio (1280 px o más: 80rem) y menú completo desde 64rem */
+@media (min-width: 64rem) {
+  .barra__enlaces {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+  }
+
+  .barra__menu {
+    display: none;
+  }
+
+  .malla {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero {
+    padding-block: 5rem;
+  }
+}
+
+/* ── 6. Movimiento reducido ────────────────────────────────────── */
+/* Si la persona pidió menos animaciones en su sistema, las quitamos. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ramo {
+    transition: none;
+  }
+}

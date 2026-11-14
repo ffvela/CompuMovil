@@ -1,0 +1,10 @@
+# netlify.toml — Le dice a Netlify cómo construir el sitio.
+[build]
+  # Comando que genera el sitio estático (revisa tipos y compila).
+  command = "npm run build"
+  # Carpeta que Netlify publica.
+  publish = "dist"
+
+[build.environment]
+  # El encargo exige Node.js 24 LTS o superior.
+  NODE_VERSION = "24"

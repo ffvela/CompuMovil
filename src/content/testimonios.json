@@ -1,0 +1,86 @@
+[
+  {
+    "id": "T01",
+    "autor": "Ernesto Baltierra",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "sobre-carrera",
+    "texto": "Entré a esta carrera con 23 años, y me pareció mejor una de 4 años que la civil, que es más larga."
+  },
+  {
+    "id": "T02",
+    "autor": "Felipe Velasquez",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "sobre-carrera",
+    "texto": "La elegí porque era un poco más corta que la civil y la malla era muy parecida, casi igual. Llegué a pensar en un instituto, pero preferí entrar a una universidad por el nivel de egreso."
+  },
+  {
+    "id": "T03",
+    "autor": "Felipe Velasquez",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "plan-estudios",
+    "texto": "Ciberseguridad me ha llamado bastante la atención, porque es muy distinto a los otros ramos de informática."
+  },
+  {
+    "id": "T04",
+    "autor": "Ernesto Baltierra",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "plan-estudios",
+    "texto": "Arquitectura de Computadores, en particular por el profesor que me tocó. Cambió mi percepción de la informática: pasó de algo abstracto a algo concreto y tangible."
+  },
+  {
+    "id": "T05",
+    "autor": "Felipe Velasquez",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "plan-estudios",
+    "texto": "En el primer año cuesta la carga académica: pasar del colegio a la universidad es otro nivel. Pero poco a poco uno se acostumbra. Algo que me hubiera gustado saber antes es que gran parte del aprendizaje es autodidacta, sobre todo en la práctica de la programación."
+  },
+  {
+    "id": "T06",
+    "autor": "Ernesto Baltierra",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "campo-laboral",
+    "texto": "Me hubiera gustado saber más de la empleabilidad, por el contexto general de la IA, y conocer mejor la malla antes de entrar."
+  },
+  {
+    "id": "T07",
+    "autor": "Felipe Velasquez",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "respaldo",
+    "texto": "Según el semestre, el horario puede ser más agotador, pero suelen ser unas 5 o 6 horas diarias en la universidad. El campus no es enorme como otros, pero tiene zonas para cada cosa: áreas verdes con sombra para comer y compartir, y la biblioteca está muy bien equipada. Los compañeros de informática suelen ser más introvertidos, pero cuando inicias una conversación son agradables. Y hay profesores de todo tipo, para bien o para mal."
+  },
+  {
+    "id": "T08",
+    "autor": "Ernesto Baltierra",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "respaldo",
+    "texto": "Cuando llegué, la primera impresión fue que parecía colegio, pero el ambiente es grato, hay áreas verdes y la biblioteca es de las mejores cosas del campus. El primer año no me costó mucho porque ya sabía lo que era entrar a la universidad (es mi segunda vez); lo distinto fue relacionarme con gente más joven, pero es mi caso particular."
+  },
+  {
+    "id": "T09",
+    "autor": "Felipe Velasquez",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "faq",
+    "texto": "Me costó la toma de ramos de la universidad, y aprender a llevarme con algunos profesores y alumnos muy particulares."
+  },
+  {
+    "id": "T10",
+    "autor": "Ernesto Baltierra",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "faq",
+    "texto": "No me gusta la toma de ramos, siento que es muy ineficiente, y algunos profesores son poco comprensivos."
+  },
+  {
+    "id": "T11",
+    "autor": "Felipe Velasquez",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "sobre-carrera",
+    "texto": "Es cosa de gustos. Si te gustaría tener una ingeniería civil y estás dispuesto a los 3 semestres extra, igualmente es una buena opción."
+  },
+  {
+    "id": "T12",
+    "autor": "Ernesto Baltierra",
+    "rol": "Estudiante de 3.er año (plan anterior)",
+    "seccion": "sobre-carrera",
+    "texto": "Yo consideré la duración como criterio principal."
+  }
+]

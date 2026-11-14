@@ -1,0 +1,6 @@
+# Permitimos que todos los buscadores indexen el sitio.
+User-agent: *
+Allow: /
+
+# Cambiar por la URL real después de publicar.
+Sitemap: https://informatica-utem.netlify.app/sitemap.xml

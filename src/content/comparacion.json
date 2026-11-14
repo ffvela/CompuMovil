@@ -1,0 +1,46 @@
+[
+  {
+    "id": "utem-informatica",
+    "carrera": "Ingeniería en Informática",
+    "institucion": "UTEM",
+    "tipoInstitucion": "Universidad",
+    "duracion": "8 semestres",
+    "grado": "Licenciatura en Informática",
+    "enfoque": "Software, sistemas de información, redes y gestión de proyectos informáticos.",
+    "cita": "F01",
+    "destacada": true
+  },
+  {
+    "id": "utem-civil-computacion",
+    "carrera": "Ingeniería Civil en Computación mención Informática",
+    "institucion": "UTEM",
+    "tipoInstitucion": "Universidad",
+    "duracion": "11 semestres",
+    "grado": "Licenciatura en Ciencias de la Ingeniería",
+    "enfoque": "Más ciencias básicas (química, termodinámica, ecuaciones diferenciales, ondas y óptica) y más gestión (investigación de operaciones, optimización).",
+    "cita": "F07",
+    "destacada": false
+  },
+  {
+    "id": "usach-civil-informatica",
+    "carrera": "Ingeniería Civil en Informática",
+    "institucion": "USACH",
+    "tipoInstitucion": "Universidad",
+    "duracion": "11 semestres",
+    "grado": "Licenciatura en Ciencias de la Ingeniería",
+    "enfoque": "Ingeniería civil con formación científica amplia.",
+    "cita": "F08",
+    "destacada": false
+  },
+  {
+    "id": "duoc-informatica",
+    "carrera": "Ingeniería en Informática",
+    "institucion": "Duoc UC",
+    "tipoInstitucion": "Instituto profesional",
+    "duracion": "10,1 semestres (duración real)",
+    "grado": "No informado",
+    "enfoque": "Mi Futuro la agrupa junto con Infraestructura y Plataformas Tecnológicas.",
+    "cita": "F09",
+    "destacada": false
+  }
+]

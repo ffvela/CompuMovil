@@ -1,0 +1,152 @@
+[
+  {
+    "id": "sobre-intro",
+    "seccion": "sobre-carrera",
+    "tipo": "dato",
+    "texto": "Quien estudia Ingeniería en Informática aprende a diseñar, desarrollar e integrar software y sistemas de información. También aprende a gestionar redes y tecnologías de la información con criterios de seguridad, calidad y eficiencia.",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "sobre-ponderaciones",
+    "seccion": "sobre-carrera",
+    "tipo": "dato",
+    "texto": "En la UTEM, Ingeniería en Informática e Ingeniería Civil en Computación piden las mismas ponderaciones y el mismo puntaje mínimo de 458 puntos.",
+    "citas": [
+      "F01",
+      "F07"
+    ]
+  },
+  {
+    "id": "sobre-interpretacion",
+    "seccion": "sobre-carrera",
+    "tipo": "interpretacion",
+    "texto": "La gran diferencia con las ingenierías civiles es la duración: son 3 semestres menos. A cambio, las civiles tienen más ciencias básicas, como química, termodinámica y ecuaciones diferenciales. Si quieres el título de ingeniero civil o te atrae la parte científica, la civil es una buena opción. Si prefieres titularte antes, esta carrera te sirve.",
+    "citas": [
+      "F01",
+      "F07",
+      "F08"
+    ]
+  },
+  {
+    "id": "sobre-ip",
+    "seccion": "sobre-carrera",
+    "tipo": "interpretacion",
+    "texto": "Comparamos con la misma carrera en Duoc UC usando los mismos indicadores de Mi Futuro. En la UTEM, la retención, la empleabilidad y el ingreso al 4.º año son más altos. En Duoc, en cambio, la gente se titula antes (10,1 frente a 12,9 semestres en promedio). La comparación es aproximada, porque Mi Futuro agrupa la carrera de Duoc con otra especialidad.",
+    "citas": [
+      "F05",
+      "F09"
+    ]
+  },
+  {
+    "id": "malla-intro",
+    "seccion": "plan-estudios",
+    "tipo": "dato",
+    "texto": "La malla se actualizó en 2026. Los primeros semestres mezclan matemáticas y física con programación. Desde el quinto semestre aparecen computación en la nube, ciencia de datos y ciberseguridad. Los electivos de los últimos años se conectan con el postgrado. El último semestre incluye la práctica profesional.",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "perfil-intro",
+    "seccion": "perfil-egreso",
+    "tipo": "dato",
+    "texto": "El perfil de egreso es lo que la universidad se compromete a que sepas hacer al titularte. Aquí lo explicamos en palabras simples.",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "trabajo-intro",
+    "seccion": "campo-laboral",
+    "tipo": "dato",
+    "texto": "Quienes se titulan pueden trabajar en empresas privadas, en el sector público, en organizaciones sin fines de lucro y en instituciones de educación superior.",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "trabajo-empleadores",
+    "seccion": "campo-laboral",
+    "tipo": "dato",
+    "texto": "En una encuesta de la UTEM, el 90 % de los empleadores destacó las competencias tecnológicas de sus titulados.",
+    "citas": [
+      "F12"
+    ]
+  },
+  {
+    "id": "respaldo-carrera",
+    "seccion": "respaldo",
+    "tipo": "dato",
+    "texto": "La carrera está certificada por 5 años, desde el 16 de junio de 2025 hasta el 16 de junio de 2030. La certificaron la Agencia Acreditadora de Chile y el Consejo de Acreditación en Informática y Computación de México (CONAIC).",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "respaldo-institucional",
+    "seccion": "respaldo",
+    "tipo": "dato",
+    "texto": "La UTEM está acreditada por la Comisión Nacional de Acreditación (CNA) por 5 años, en nivel Avanzado, hasta octubre de 2031. La acreditación incluye todas las áreas, también la de Investigación, creación e innovación.",
+    "citas": [
+      "F04"
+    ]
+  },
+  {
+    "id": "respaldo-academicos",
+    "seccion": "respaldo",
+    "tipo": "dato",
+    "texto": "Entre 2020 y 2025, la UTEM incorporó 83 académicos.",
+    "citas": [
+      "F12"
+    ]
+  },
+  {
+    "id": "respaldo-campus",
+    "seccion": "respaldo",
+    "tipo": "dato",
+    "texto": "Las clases son en el Campus Macul, en Av. José Pedro Alessandri 1242, Ñuñoa.",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "admision-intro",
+    "seccion": "admision",
+    "tipo": "dato",
+    "texto": "Se postula con la PAES (Prueba de Acceso a la Educación Superior), a través del sistema centralizado del DEMRE. También existe el Programa Propedéutico de la UTEM.",
+    "citas": [
+      "F01",
+      "F06"
+    ]
+  },
+  {
+    "id": "admision-costos",
+    "seccion": "admision",
+    "tipo": "dato",
+    "texto": "La matrícula cuesta $90.000 y el arancel anual es de $4.763.300, que se puede pagar en hasta 10 cuotas. La matrícula puede cubrirse con la Gratuidad.",
+    "citas": [
+      "F01"
+    ]
+  },
+  {
+    "id": "trabajo-glosario",
+    "seccion": "campo-laboral",
+    "tipo": "dato",
+    "texto": "La empleabilidad es el porcentaje de titulados que tiene trabajo después de cierto tiempo. La retención es el porcentaje de estudiantes que sigue en la carrera después del primer año.",
+    "citas": [
+      "F05"
+    ]
+  },
+  {
+    "id": "trabajo-duracion",
+    "seccion": "campo-laboral",
+    "tipo": "interpretacion",
+    "texto": "Ojo con la duración: aunque la carrera dura 8 semestres en el papel, en promedio la gente se titula en casi 13. Es bueno saberlo para planificar tiempo y financiamiento.",
+    "citas": [
+      "F01",
+      "F05"
+    ]
+  }
+]

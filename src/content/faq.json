@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q1",
+    "pregunta": "¿En qué voy a trabajar y cuánto se gana?",
+    "respuesta": "Puedes trabajar en desarrollo de software, redes, seguridad de la información o gestión de proyectos, en empresas, en el Estado o en universidades. Según Mi Futuro (2026), el 96,5 % tiene trabajo al segundo año y el ingreso promedio al cuarto año está entre $2.200.000 y $2.300.000.",
+    "tipo": "dato",
+    "citas": [
+      "F01",
+      "F05"
+    ],
+    "origen": "Pregunta 'Qué te gustaría saber': trabajo (5/6)"
+  },
+  {
+    "id": "q2",
+    "pregunta": "¿Qué puntaje necesito?",
+    "respuesta": "Necesitas un promedio mínimo de 458 puntos entre Competencia Lectora y M1. El puntaje que más pesa es M1 (30 %), seguido del Ranking (25 %). Hay 150 vacantes.",
+    "tipo": "dato",
+    "citas": [
+      "F01"
+    ],
+    "origen": "Barrera 'El puntaje' (4/6)"
+  },
+  {
+    "id": "q3",
+    "pregunta": "¿Cuánto cuesta? ¿Hay gratuidad?",
+    "respuesta": "La matrícula cuesta $90.000 y el arancel anual es de $4.763.300, que se puede pagar en hasta 10 cuotas. Según la UTEM, la matrícula puede cubrirse con la Gratuidad, y quienes entran por el Programa Propedéutico no pagan matrícula. Para saber si cumples los requisitos de la Gratuidad, revisa el sitio de beneficios del Ministerio de Educación.",
+    "tipo": "dato",
+    "citas": [
+      "F01"
+    ],
+    "origen": "Tema 'Becas, gratuidad' (4/6) y barrera 'El costo' (3/6)"
+  },
+  {
+    "id": "q4",
+    "pregunta": "¿Hay muchas matemáticas? ¿Y si no soy bueno para eso?",
+    "respuesta": "De los 38 ramos de la malla, 9 son de ciencias básicas (matemáticas, física y estadística), y todos están en los primeros cuatro semestres. Cuestan, pero no son la mayor parte de la carrera.",
+    "tipo": "dato",
+    "citas": [
+      "F01"
+    ],
+    "testimonios": [
+      "T05"
+    ],
+    "origen": "Barrera 'Las matemáticas' (2/6) y duda abierta de P3"
+  },
+  {
+    "id": "q5",
+    "pregunta": "¿Cómo sé si me va a gustar?",
+    "respuesta": "Desde el primer semestre tienes Algoritmos y Programación y una introducción a la carrera con actividades prácticas. Una buena idea antes de postular es probar algún curso gratuito de programación: si te entretiene resolver problemas, vas bien encaminado.",
+    "tipo": "interpretacion",
+    "citas": [
+      "F01"
+    ],
+    "testimonios": [
+      "T03",
+      "T04"
+    ],
+    "origen": "Barrera 'No saber si me va a gustar' (3/6) y duda de P4"
+  },
+  {
+    "id": "q6",
+    "pregunta": "Con la inteligencia artificial, ¿va a haber trabajo?",
+    "respuesta": "Nadie puede asegurar el futuro. Lo que muestran los datos de 2026 es que el 96,5 % de los titulados tiene trabajo al segundo año. Además, la malla nueva incluye ciencia de datos, computación en la nube y ciberseguridad.",
+    "tipo": "interpretacion",
+    "citas": [
+      "F05",
+      "F01"
+    ],
+    "testimonios": [
+      "T06"
+    ],
+    "origen": "Duda abierta de P5: 'Empleabilidad a futuro'"
+  },
+  {
+    "id": "q7",
+    "pregunta": "¿De verdad se termina en 4 años?",
+    "respuesta": "La duración formal es de 8 semestres, pero según Mi Futuro el promedio real es de 12,9 semestres. Influyen los ramos reprobados, la carga académica y la toma de ramos.",
+    "tipo": "dato",
+    "citas": [
+      "F01",
+      "F05"
+    ],
+    "testimonios": [
+      "T09",
+      "T10"
+    ],
+    "origen": "Tema 'Duración y horario' (1/6)"
+  },
+  {
+    "id": "q8",
+    "pregunta": "¿Me conviene más esta carrera o Ingeniería Civil en Computación?",
+    "respuesta": "Depende de si prefieres titularte antes (8 semestres) o tener el título de ingeniero civil (11 semestres). En la UTEM las dos piden las mismas ponderaciones. Revisa la comparación en la sección Sobre la carrera.",
+    "tipo": "interpretacion",
+    "citas": [
+      "F01",
+      "F07"
+    ],
+    "testimonios": [
+      "T11",
+      "T12"
+    ],
+    "origen": "Tema 'En qué se diferencia' (2/6)"
+  }
+]

@@ -1,0 +1,166 @@
+[
+  {
+    "id": "F01",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2026,
+    "titulo": "Ingeniería en Informática",
+    "descripcion": "Página de la carrera",
+    "url": "https://www.utem.cl/carreras/ingenieria-en-informatica/",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "hero",
+      "plan-estudios",
+      "perfil-egreso",
+      "campo-laboral",
+      "respaldo",
+      "admision"
+    ],
+    "autorCorto": "UTEM"
+  },
+  {
+    "id": "F02",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2022,
+    "titulo": "Resolución que aprueba el rediseño de la carrera de Ingeniería en Informática (21030), Plan Regular",
+    "url": "https://transparencia.utem.cl/27oe",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [],
+    "autorCorto": "UTEM"
+  },
+  {
+    "id": "F03",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2026,
+    "titulo": "Ingeniería en Informática",
+    "url": "https://www.utem.cl/wp-content/uploads/2026/05/INGENIERIA_EN_INFORMATICA_UTEM.pdf",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [],
+    "descripcion": "Folleto de la carrera",
+    "autorCorto": "UTEM"
+  },
+  {
+    "id": "F04",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2026,
+    "titulo": "UTEM acreditada Nivel Avanzado",
+    "url": "https://noticias.utem.cl/2026/10/18/utem-acreditada-nivel-avanzado/",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "respaldo"
+    ],
+    "descripcion": "Noticia institucional, 18 de octubre de 2026",
+    "autorCorto": "UTEM"
+  },
+  {
+    "id": "F05",
+    "autor": "Servicio de Información de Educación Superior",
+    "anio": 2026,
+    "titulo": "Buscador de empleabilidad e ingresos: Ingeniería en Informática, Universidad Tecnológica Metropolitana",
+    "descripcion": "Base de datos, Mi Futuro, Ministerio de Educación",
+    "url": "https://www.mifuturo.cl/",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "campo-laboral"
+    ],
+    "autorCorto": "SIES"
+  },
+  {
+    "id": "F06",
+    "autor": "Departamento de Evaluación, Medición y Registro Educacional",
+    "anio": 2026,
+    "titulo": "Fechas importantes PAES Regular, Proceso de Admisión 2027",
+    "url": "https://portaldemre.demre.cl/portales/colegios/material-grafico/03-afiche-p2027-fechas.pdf",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "hero",
+      "admision"
+    ],
+    "descripcion": "Afiche",
+    "autorCorto": "DEMRE"
+  },
+  {
+    "id": "F07",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2026,
+    "titulo": "Ingeniería Civil en Computación mención Informática",
+    "descripcion": "Página de la carrera",
+    "url": "https://www.utem.cl/carreras/ingenieria-civil-en-computacion-mencion-informatica/",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "sobre-carrera"
+    ],
+    "autorCorto": "UTEM"
+  },
+  {
+    "id": "F08",
+    "autor": "Universidad de Santiago de Chile",
+    "anio": 2025,
+    "titulo": "Ingeniería Civil en Informática",
+    "descripcion": "Ficha de carrera",
+    "url": "https://informatica.usach.cl/wp-content/uploads/2025/03/16004_ING-CIVIL-EN-INFORMATICA_WEB.pdf",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "sobre-carrera"
+    ],
+    "autorCorto": "USACH"
+  },
+  {
+    "id": "F09",
+    "autor": "Servicio de Información de Educación Superior",
+    "anio": 2026,
+    "titulo": "Buscador de empleabilidad e ingresos: Ingeniería en Informática, en Infraestructura y Plataformas Tecnológicas, IP Duoc UC",
+    "descripcion": "Base de datos, Mi Futuro, Ministerio de Educación",
+    "url": "https://www.mifuturo.cl/",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "sobre-carrera"
+    ],
+    "autorCorto": "SIES"
+  },
+  {
+    "id": "F10",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2024,
+    "titulo": "Empleabilidad de las y los titulados de la UTEM 2023",
+    "descripcion": "Serie Análisis Institucional UTEM",
+    "url": "https://calidad.utem.cl/wp-content/uploads/2025/03/2023-Empleabilidad-Tituladosas-UTEM-OP.pdf",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [],
+    "autorCorto": "UTEM"
+  },
+  {
+    "id": "F11",
+    "autor": "Mediabanco",
+    "anio": 2026,
+    "titulo": "Histórico: UTEM acreditada por cinco años con investigación",
+    "url": "https://www.mediabanco.com/historico-utem-acreditada-por-cinco-anos-con-investigacion/",
+    "tipo": "secundaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [],
+    "autorCorto": "Mediabanco"
+  },
+  {
+    "id": "F12",
+    "autor": "Universidad Tecnológica Metropolitana",
+    "anio": 2025,
+    "titulo": "Resumen ejecutivo: Informe de Autoevaluación Institucional 2025",
+    "url": "https://calidad.utem.cl/wp-content/uploads/2025/10/Resumen-Ejecutivo-Informe-Autoevaluacion-Institucional-2025-2.pdf",
+    "tipo": "primaria",
+    "fechaConsulta": "2026-11-13",
+    "secciones": [
+      "respaldo",
+      "campo-laboral"
+    ],
+    "autorCorto": "UTEM"
+  }
+]

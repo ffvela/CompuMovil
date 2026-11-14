@@ -1,0 +1,24 @@
+[
+  {
+    "id": "utem",
+    "institucion": "UTEM",
+    "carrera": "Ingeniería en Informática",
+    "retencion": "90,1 %",
+    "duracionReal": "12,9 semestres",
+    "empleabilidad1": "87,1 %",
+    "empleabilidad2": "96,5 %",
+    "ingreso4": "$2.200.000 a $2.300.000",
+    "cita": "F05"
+  },
+  {
+    "id": "duoc",
+    "institucion": "Duoc UC (instituto profesional)",
+    "carrera": "Ingeniería en Informática, en Infraestructura y Plataformas Tecnológicas",
+    "retencion": "81,8 %",
+    "duracionReal": "10,1 semestres",
+    "empleabilidad1": "78,3 %",
+    "empleabilidad2": "89,9 %",
+    "ingreso4": "$1.900.000 a $2.000.000",
+    "cita": "F09"
+  }
+]

@@ -1,0 +1,268 @@
+[
+  {
+    "id": "s1-1",
+    "semestre": 1,
+    "nombre": "Design Thinking",
+    "area": "formacion-general",
+    "cita": "F01"
+  },
+  {
+    "id": "s1-2",
+    "semestre": 1,
+    "nombre": "Introducción a la Matemática para Ingeniería",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s1-3",
+    "semestre": 1,
+    "nombre": "Introducción a la Ingeniería en Informática",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s1-4",
+    "semestre": 1,
+    "nombre": "Algoritmos y Programación",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s1-5",
+    "semestre": 1,
+    "nombre": "Habilidades de Razonamiento Lógico",
+    "area": "formacion-general",
+    "cita": "F01"
+  },
+  {
+    "id": "s2-1",
+    "semestre": 2,
+    "nombre": "Física General",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s2-2",
+    "semestre": 2,
+    "nombre": "Cálculo I",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s2-3",
+    "semestre": 2,
+    "nombre": "Álgebra I",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s2-4",
+    "semestre": 2,
+    "nombre": "Estructura de Datos",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s2-5",
+    "semestre": 2,
+    "nombre": "Habilidades de Trabajo Académico",
+    "area": "formacion-general",
+    "cita": "F01"
+  },
+  {
+    "id": "s3-1",
+    "semestre": 3,
+    "nombre": "Electromagnetismo",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s3-2",
+    "semestre": 3,
+    "nombre": "Cálculo II",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s3-3",
+    "semestre": 3,
+    "nombre": "Álgebra II",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s3-4",
+    "semestre": 3,
+    "nombre": "Lenguaje de Programación",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s3-5",
+    "semestre": 3,
+    "nombre": "Bases de Datos",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s4-1",
+    "semestre": 4,
+    "nombre": "Electrotecnia",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s4-2",
+    "semestre": 4,
+    "nombre": "Fundamentos de Administración",
+    "area": "gestion",
+    "cita": "F01"
+  },
+  {
+    "id": "s4-3",
+    "semestre": 4,
+    "nombre": "Estadística y Probabilidades",
+    "area": "ciencias-basicas",
+    "cita": "F01"
+  },
+  {
+    "id": "s4-4",
+    "semestre": 4,
+    "nombre": "Grafos y Lenguajes Formales",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s4-5",
+    "semestre": 4,
+    "nombre": "Desarrollo Ágil",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s5-1",
+    "semestre": 5,
+    "nombre": "Ingeniería y Medio Ambiente",
+    "area": "formacion-general",
+    "cita": "F01"
+  },
+  {
+    "id": "s5-2",
+    "semestre": 5,
+    "nombre": "Fundamentos de Economía",
+    "area": "gestion",
+    "cita": "F01"
+  },
+  {
+    "id": "s5-3",
+    "semestre": 5,
+    "nombre": "Arquitectura de Computadores",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s5-4",
+    "semestre": 5,
+    "nombre": "Ingeniería de Software (Práctica Intermedia)",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s5-5",
+    "semestre": 5,
+    "nombre": "Introducción a la Computación en la Nube",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s6-1",
+    "semestre": 6,
+    "nombre": "Evaluación de Proyectos de Software",
+    "area": "gestion",
+    "cita": "F01"
+  },
+  {
+    "id": "s6-2",
+    "semestre": 6,
+    "nombre": "Fundamentos de Data Science",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s6-3",
+    "semestre": 6,
+    "nombre": "Redes y Comunicación de Datos",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s6-4",
+    "semestre": 6,
+    "nombre": "Computación Web y Móvil",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s6-5",
+    "semestre": 6,
+    "nombre": "Electivo de Profundización Profesional I",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s7-1",
+    "semestre": 7,
+    "nombre": "Computación en la Nube",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s7-2",
+    "semestre": 7,
+    "nombre": "Gestión de Proyectos Informáticos",
+    "area": "gestion",
+    "cita": "F01"
+  },
+  {
+    "id": "s7-3",
+    "semestre": 7,
+    "nombre": "Ciberseguridad",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s7-4",
+    "semestre": 7,
+    "nombre": "Electivo de Profundización Profesional II",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s7-5",
+    "semestre": 7,
+    "nombre": "Electivo de Profundización Profesional III",
+    "area": "informatica",
+    "cita": "F01"
+  },
+  {
+    "id": "s8-1",
+    "semestre": 8,
+    "nombre": "Actividad Integradora de Certificación de Grado y Título Profesional",
+    "area": "titulacion",
+    "cita": "F01"
+  },
+  {
+    "id": "s8-2",
+    "semestre": 8,
+    "nombre": "Práctica Profesional",
+    "area": "titulacion",
+    "cita": "F01"
+  },
+  {
+    "id": "s8-3",
+    "semestre": 8,
+    "nombre": "Taller de Empleabilidad",
+    "area": "formacion-general",
+    "cita": "F01"
+  }
+]

@@ -1,0 +1,14 @@
+# Dependencias (se reinstalan con npm install)
+node_modules/
+
+# Resultado del build y archivos generados por Astro
+dist/
+.astro/
+
+# Archivos del sistema y del editor
+.DS_Store
+.vscode/
+*.log
+
+# Variables de entorno (por si algún día se usan)
+.env

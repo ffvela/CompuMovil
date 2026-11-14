@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ingenieria-en-informatica",
+    "nombre": "Ingeniería en Informática",
+    "universidad": "Universidad Tecnológica Metropolitana (UTEM)",
+    "bajada": "Una carrera de 4 años para diseñar, desarrollar e integrar software, sistemas de información y redes.",
+    "datos": [
+      {
+        "etiqueta": "Título profesional",
+        "valor": "Ingeniera o Ingeniero en Informática",
+        "cita": "F01"
+      },
+      {
+        "etiqueta": "Grado académico",
+        "valor": "Licenciada o Licenciado en Informática",
+        "cita": "F01"
+      },
+      {
+        "etiqueta": "Duración",
+        "valor": "8 semestres",
+        "cita": "F01"
+      },
+      {
+        "etiqueta": "Jornada",
+        "valor": "Diurna, Campus Macul (Ñuñoa)",
+        "cita": "F01"
+      },
+      {
+        "etiqueta": "Código DEMRE",
+        "valor": "21030",
+        "cita": "F01"
+      },
+      {
+        "etiqueta": "Vacantes",
+        "valor": "150",
+        "cita": "F01"
+      }
+    ],
+    "aviso": "La PAES Regular se rinde el 30 de noviembre y el 1 y 2 de diciembre de 2026.",
+    "avisoCita": "F06"
+  }
+]

@@ -1,0 +1,21 @@
+# Ingeniería en Informática UTEM (proyecto académico)
+
+> Landing page informativa sobre la carrera Ingeniería en Informática de la Universidad Tecnológica Metropolitana (UTEM), hecha como proyecto académico del curso Computación Móvil. No es un sitio oficial de la UTEM. Todos los datos tienen su fuente citada en la sección Referencias.
+
+## Datos clave (fuente: página oficial de la carrera, utem.cl, 2026)
+- Título: Ingeniera/o en Informática. Grado: Licenciada/o en Informática.
+- Duración formal: 8 semestres. Jornada diurna. Campus Macul (Ñuñoa). Código DEMRE 21030. Vacantes: 150.
+- Ponderaciones: NEM 10 %, Ranking 25 %, Competencia Lectora 20 %, M1 30 %, M2 5 %, Ciencias o Historia 10 %. Puntaje mínimo: 458 (promedio CL y M1).
+
+## Indicadores (fuente: Mi Futuro, Mineduc, 2026)
+- Empleabilidad: 87,1 % al 1.er año y 96,5 % al 2.º año.
+- Ingreso promedio al 4.º año: entre $2.200.000 y $2.300.000.
+- Retención de 1.er año: 90,1 %. Duración real promedio: 12,9 semestres.
+
+## Secciones
+- [Sobre la carrera](/#sobre)
+- [Campo laboral](/#trabajo)
+- [Plan de estudios](/#malla)
+- [Admisión y costos](/#admision)
+- [Preguntas frecuentes](/#faq)
+- [Referencias](/#referencias)

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "c1",
+    "tipo": "area",
+    "titulo": "Desarrollo de software",
+    "texto": "Programar y mantener aplicaciones y sistemas.",
+    "cita": "F01"
+  },
+  {
+    "id": "c2",
+    "tipo": "area",
+    "titulo": "Gestión de proyectos informáticos",
+    "texto": "Dirigir proyectos y evaluar qué tecnologías conviene usar.",
+    "cita": "F01"
+  },
+  {
+    "id": "c3",
+    "tipo": "area",
+    "titulo": "Sistemas, redes e infraestructura",
+    "texto": "Administrar sistemas de información, redes y recursos computacionales.",
+    "cita": "F01"
+  },
+  {
+    "id": "c4",
+    "tipo": "area",
+    "titulo": "Seguridad de la información",
+    "texto": "Aplicar políticas de seguridad y hacer auditoría informática.",
+    "cita": "F01"
+  },
+  {
+    "id": "c5",
+    "tipo": "area",
+    "titulo": "Transformación digital",
+    "texto": "Planificar cómo una organización incorpora nuevas tecnologías.",
+    "cita": "F01"
+  },
+  {
+    "id": "e1",
+    "tipo": "cifra",
+    "titulo": "Empleabilidad al 1.er año",
+    "valor": "87,1 %",
+    "anio": "2026",
+    "cita": "F05"
+  },
+  {
+    "id": "e2",
+    "tipo": "cifra",
+    "titulo": "Empleabilidad al 2.º año",
+    "valor": "96,5 %",
+    "anio": "2026",
+    "cita": "F05"
+  },
+  {
+    "id": "e3",
+    "tipo": "cifra",
+    "titulo": "Ingreso promedio al 4.º año",
+    "valor": "Entre $2.200.000 y $2.300.000",
+    "anio": "2026",
+    "cita": "F05"
+  },
+  {
+    "id": "e4",
+    "tipo": "cifra",
+    "titulo": "Retención de 1.er año",
+    "valor": "90,1 %",
+    "anio": "2026",
+    "cita": "F05"
+  },
+  {
+    "id": "e5",
+    "tipo": "cifra",
+    "titulo": "Duración real promedio",
+    "valor": "12,9 semestres",
+    "anio": "2026",
+    "cita": "F05"
+  }
+]

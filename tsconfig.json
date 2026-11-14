@@ -1,0 +1,13 @@
+// tsconfig.json — Reglas de TypeScript del proyecto.
+// Heredamos el preset "strict" de Astro, que activa el modo estricto
+// completo (entre otras cosas, prohíbe el `any` implícito). La
+// rúbrica exige TypeScript en modo strict y sin `any`.
+{
+  "extends": "astro/tsconfigs/strict",
+  // `.astro/types.d.ts` lo genera Astro con los tipos de nuestras
+  // colecciones de contenido; lo incluimos para tenerlos en todo el
+  // proyecto.
+  "include": [".astro/types.d.ts", "**/*"],
+  // `dist` es el resultado del build, no código fuente.
+  "exclude": ["dist"]
+}

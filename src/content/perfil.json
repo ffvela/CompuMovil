@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p1",
+    "titulo": "Crear software",
+    "texto": "Diseñar, programar e integrar aplicaciones y sistemas de información.",
+    "cita": "F01"
+  },
+  {
+    "id": "p2",
+    "titulo": "Gestionar redes e infraestructura",
+    "texto": "Administrar redes y recursos computacionales de una organización.",
+    "cita": "F01"
+  },
+  {
+    "id": "p3",
+    "titulo": "Cuidar la información",
+    "texto": "Trabajar con criterios de seguridad, confiabilidad, calidad y eficiencia.",
+    "cita": "F01"
+  },
+  {
+    "id": "p4",
+    "titulo": "Trabajar con otros",
+    "texto": "Comunicarse bien, trabajar en equipo, seguir aprendiendo y actuar con responsabilidad social.",
+    "cita": "F01"
+  },
+  {
+    "id": "p5",
+    "titulo": "Innovar y emprender",
+    "texto": "Proponer soluciones nuevas y crear proyectos propios.",
+    "cita": "F01"
+  }
+]
