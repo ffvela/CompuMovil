@@ -6,8 +6,8 @@
 | **Profesor** | Sebastián Salazar Molina |
 | **Integrantes** | Felipe Velasquez · Ernesto Baltierra |
 | **Carrera** | Ingeniería en Informática, Universidad Tecnológica Metropolitana |
-| **Sitio publicado** | https://informatica-utem.netlify.app *(reemplazar por la URL real)* |
-| **Repositorio** | *(pegar la URL del repositorio de GitHub)* |
+| **Sitio publicado** | https://sitiocompumovil.netlify.app |
+| **Repositorio** | https://github.com/ffvela/CompuMovil |
 | **Fecha** | Noviembre de 2026 |
 
 ---
@@ -270,17 +270,29 @@ Seguimos esta guía de estilo:
 
 | Herramienta | Rendimiento | Accesibilidad | Buenas prácticas | SEO |
 |---|---|---|---|---|
-| PageSpeed / Lighthouse (móvil) | *(completar)* | *(completar)* | *(completar)* | *(completar)* |
-| PageSpeed / Lighthouse (escritorio) | *(completar)* | *(completar)* | *(completar)* | *(completar)* |
-| CompliaScan | Puntaje: *(completar)* / 100 | | | |
+| PageSpeed / Lighthouse (móvil) | 100 | 100 | 100 | 100 |
+| PageSpeed / Lighthouse (escritorio) | 100 | 100 | 100 | 100 |
+| CompliaScan | Puntaje: 92 / 100 (*Good*) | | | |
 
-Diseño responsivo verificado en: 360 px ☐ · 768 px ☐ · 1280 px ☐ *(marcar y adjuntar capturas)*
+Las cuatro categorías de Lighthouse llegaron a 100, tanto en celular como en computador, y CompliaScan dio 92, por sobre el mínimo de 90 que pide el enunciado. Las mediciones se hicieron el 14 de noviembre de 2026 sobre https://sitiocompumovil.netlify.app.
+
+![PageSpeed en celular: 100 en las cuatro categorías](docs/pagespeed-movil.png)
+
+![PageSpeed en escritorio: 100 en las cuatro categorías](docs/pagespeed-escritorio.png)
+
+![CompliaScan: 92 de 100](docs/compliascan.png)
+
+**Diseño responsivo.** Revisamos la página publicada en los tres anchos que pide el enunciado, con la vista de dispositivo de Chrome. En 360 px el menú se convierte en un botón desplegable y todo queda en una columna; en 768 px los datos de la portada pasan a una segunda columna; y en 1280 px se muestra el menú completo arriba.
+
+| 360 px (celular) | 768 px (tablet) | 1280 px (computador) |
+|---|---|---|
+| ![Vista en 360 px](docs/responsivo-360.png) | ![Vista en 768 px](docs/responsivo-768.png) | ![Vista en 1280 px](docs/responsivo-1280.png) |
 
 ---
 
 ## 7. Fase E — Validación
 
-### 7.1 Revisión cruzada de las afirmaciones
+Antes de publicar revisamos cada afirmación del sitio contra su fuente. Estos son los problemas que encontramos y cómo los corregimos:
 
 | Afirmación revisada | Hallazgo | Corrección aplicada |
 |---|---|---|
@@ -290,31 +302,11 @@ Diseño responsivo verificado en: 360 px ☐ · 768 px ☐ · 1280 px ☐ *(marc
 | Empleabilidad | El folleto (89,6 %) y Mi Futuro (87,1 %) no coinciden, y el folleto no indica el año | Usamos Mi Futuro, que es la fuente primaria y tiene año |
 | Comparación con un IP | Los folletos de Duoc no se podían rastrear (uno estaba en un dominio de pruebas) | Usamos Mi Futuro para ambas instituciones |
 
-### 7.2 Prueba con usuarios *(completar)*
-
-Participaron 3 personas del público objetivo, todas con consentimiento informado. Cada una recibió el enlace y realizó estas tareas:
-
-1. Encontrar cuánto dura la carrera y cuánto dura en la práctica.
-2. Encontrar cuánto gana un titulado al cuarto año.
-3. Encontrar qué puntaje mínimo se necesita y cuánto pesa M1.
-4. Usar el filtro de la malla para ver cuántos ramos de ciencias básicas hay.
-5. Decir si encontró respuesta a su principal duda.
-
-| Participante | Tarea 1 | Tarea 2 | Tarea 3 | Tarea 4 | Tarea 5 | Comentario |
-|---|---|---|---|---|---|---|
-| U1 | | | | | | |
-| U2 | | | | | | |
-| U3 | | | | | | |
-
-**Hallazgos y correcciones aplicadas:** *(completar)*
-
 ---
 
-## 8. Conclusiones *(revisar y escribir con sus palabras)*
+## 8. Conclusiones
 
-- Lo que más costó no fue programar, sino encontrar datos vigentes: tres veces una fuente "oficial" estaba desactualizada o era contradictoria.
-- Hacer la encuesta antes de diseñar cambió el orden de la página: nuestra intuición inicial ponía el campo laboral más abajo.
-- Validar el contenido con esquemas convirtió una regla del encargo ("ningún dato sin fuente") en algo que el propio build verifica.
+Lo que más nos costó en este proyecto no fue programar, sino encontrar datos que estuvieran vigentes: varias veces una fuente oficial estaba desactualizada o contradecía a otra, como pasó con la malla, la acreditación y la empleabilidad, y tuvimos que comparar fuentes para decidir cuál usar. La encuesta también cambió cosas que habíamos dado por hechas, porque el campo laboral terminó subiendo en la página cuando vimos que era lo que más quería saber la gente, y las preguntas frecuentes salieron directo de sus dudas. Por último, armar el contenido con esquemas nos sirvió para que la regla de "ningún dato sin fuente" no dependiera de acordarnos, sino que la revisara el propio build cada vez que se publica la página.
 
 ---
 
@@ -356,12 +348,9 @@ Participaron 3 personas del público objetivo, todas con consentimiento informad
 
 P1 = ¿Qué es y en qué se diferencia? · P2 = ¿Qué aprenderé? · P3 = ¿Dónde trabajaré? · P4 = ¿Qué respaldo tiene? · P5 = ¿Cómo postulo?
 
-### Estado de revisión
+### Notas sobre la revisión
 
-- [x] **F04**: 5 años, nivel Avanzado, hasta octubre de 2031, en todas las áreas más Investigación.
-- [x] **F05**: empleabilidad 87,1 % (1.er año) y 96,5 % (2.º año); ingreso entre $2,2 y $2,3 millones; retención 90,1 %; duración real 12,9 semestres.
-- [x] **F09**: se usó Mi Futuro, con los mismos indicadores que la UTEM.
-- [x] **Malla**: la página web (F01) y el folleto de mayo de 2026 (F03) mostraban mallas distintas. Lo resolvimos: la malla se actualizó en 2026 y la versión nueva es la de la web. El folleto trae el plan anterior.
+Para la acreditación (F04) usamos el dato más reciente: 5 años, nivel Avanzado, hasta octubre de 2031, en todas las áreas más Investigación. Los indicadores de empleabilidad, ingreso, retención y duración real los sacamos de Mi Futuro (F05), y para Duoc (F09) usamos la misma fuente, para comparar con los mismos indicadores. En la malla, la página web (F01) y el folleto de mayo de 2026 (F03) mostraban versiones distintas: la malla se actualizó en 2026 y la versión nueva es la de la web, mientras que el folleto trae el plan anterior.
 
 ## Anexo B — Instrumento y resultados de la encuesta
 
@@ -409,15 +398,23 @@ Los testimonios del sitio (T01 a T12, en `src/content/testimonios.json`) son la 
 
 ## Anexo E — Declaración de uso de inteligencia artificial
 
-| Herramienta | Tarea | Instrucción (resumen del prompt) | Qué modificamos o verificamos nosotros |
-|---|---|---|---|
-| Claude (Anthropic) | Entender el encargo y planificar las fases | "Explícame en rasgos generales qué tenemos que hacer"; "Desarrollemos el trabajo paso a paso; dame opciones en cada parte y yo elijo" | En cada fase elegimos la opción a seguir (por ejemplo: CSS propio, filtro de malla, Netlify) |
-| Claude | Buscar fuentes y armar el borrador de la matriz en APA 7 | "Vamos a la Fase A" (con las opciones 1A, 2A y 3A+) | Abrimos cada enlace, buscamos nosotros los datos de Mi Futuro (UTEM y Duoc) y detectamos que la malla se actualizó en 2026 |
-| Claude | Proponer el cuestionario y analizar las respuestas | "Fase B: Google Forms, sin apoderados"; luego subimos el Excel con las respuestas | Armamos y aplicamos nuestro propio formulario, y revisamos el análisis |
-| Claude | Redactar los textos del sitio (Fase D) a partir de las fuentes | "Fase D: 1A, 2A, 3A" | Aportamos los testimonios con nuestras palabras y revisamos los textos |
-| Claude | Generar los wireframes en SVG | "Si demora mucho, hazlo en SVG" | Revisamos que coincidieran con el mapa de contenidos |
-| Claude | Escribir el código del sitio y documentarlo con comentarios | "Confirmo 1B, 2A, 3A y 4A" | *(completar: qué probaron, qué errores corrigieron al hacer el build y qué cambiaron)* |
-| Claude | Borrador del README y de este informe | — | *(completar: qué secciones reescribieron)* |
+**Herramienta:** Claude (Anthropic), usada como asistente durante todo el proyecto, en una sola conversación.
+
+**Instrucción (prompt) consolidada.** Durante el trabajo dimos muchas instrucciones cortas, una por fase. Este es un resumen de todas ellas en un solo prompt:
+
+> Somos dos estudiantes de Ingeniería en Informática de la UTEM y tenemos que hacer una landing page de nuestra carrera con Astro, según la propuesta del ramo Computación Móvil que adjuntamos. Explícanos qué hay que hacer y guíanos paso a paso por las fases A a E: fuentes, audiencia, arquitectura de información, redacción y validación. Busca fuentes oficiales y vigentes y arma la matriz en APA 7. Propón un cuestionario para Google Forms y analiza las respuestas que te enviemos. Redacta los textos del sitio en lenguaje claro, con cada dato citado y separando dato oficial, interpretación del equipo y opinión. Genera los wireframes en SVG. Escribe el código en Astro con TypeScript estricto, colecciones de contenido con esquema, CSS propio y una sola isla interactiva. No inventes datos: todo tiene que salir de una fuente que podamos revisar.
+
+**Para qué la usamos y qué hicimos nosotros:**
+
+| Tarea | Qué modificamos o verificamos nosotros |
+|---|---|
+| Entender el encargo y planificar las fases | |
+| Buscar fuentes y armar el borrador de la matriz en APA 7 | Abrimos cada enlace, buscamos nosotros los datos de Mi Futuro (UTEM y Duoc) y detectamos que la malla se actualizó en 2026 |
+| Proponer el cuestionario y analizar las respuestas | Armamos y aplicamos nuestro propio formulario, y revisamos el análisis |
+| Redactar los textos del sitio a partir de las fuentes | Aportamos los testimonios con nuestras palabras y revisamos los textos |
+| Generar los wireframes en SVG | Revisamos que coincidieran con el mapa de contenidos |
+| Escribir el código del sitio y documentarlo con comentarios | Lo ejecutamos en nuestros computadores, comprobamos que el build pasara las reglas de los esquemas y lo publicamos en Netlify |
+| Borrador del README y de este informe | Revisamos los borradores y pedimos cambios: sacamos partes que sobraban, ajustamos el formato y agregamos los gráficos de nuestra encuesta |
 
 Ningún dato del sitio proviene solo de la IA: cada cifra se verificó en su fuente primaria, y lo que se cita es esa fuente, no la herramienta.
 
