@@ -1,76 +1,82 @@
-# Ingeniería en Informática UTEM — Landing page
+# Ingeniería en Informática UTEM
 
-Página web que presenta la carrera Ingeniería en Informática de la UTEM a estudiantes de enseñanza media y a personas que piensan estudiar o cambiarse de carrera. Toda la información tiene su fuente oficial citada.
+Página que presenta la carrera de Ingeniería en Informática de la UTEM a estudiantes de 3.° y 4.° medio, a sus familias y a personas que están pensando en estudiar o cambiarse de carrera. Todos los datos tienen su fuente oficial.
 
-> Proyecto académico del curso Computación Móvil. No es un sitio oficial de la Universidad Tecnológica Metropolitana.
+Es un proyecto del ramo Computación Móvil, **no es un sitio oficial de la UTEM**.
 
-- **Sitio publicado:** https://informatica-utem.netlify.app *(reemplazar por la URL real)*
-- **Equipo:** Felipe Velasquez y Ernesto Baltierra
+- **Página publicada:** https://sitiocompumovil.netlify.app
+- **Hecho por:** Felipe Velasquez y Ernesto Baltierra
 
 ---
 
-## 1. Cómo actualizar la información (sin saber programar)
+## Cómo cambiar la información de la página
 
-Todo el texto y los datos de la página están en la carpeta **`src/content/`**, en archivos `.json`. **No hace falta tocar nada más.**
+No hace falta saber programar. Todo lo que se lee en la página está en la carpeta **`src/content/`**, en archivos `.json`. Lo demás no hay que tocarlo.
 
-| Quiero cambiar... | Archivo |
+| Si quieres cambiar... | Abre este archivo |
 |---|---|
-| Nombre, título, duración, vacantes (portada) | `carrera.json` |
-| Párrafos de cada sección | `bloques.json` |
-| Ramos de la malla | `malla.json` |
-| Cifras de empleabilidad e ingresos, áreas de trabajo | `campo-laboral.json` |
-| Comparación con otras carreras | `comparacion.json` e `indicadores-mifuturo.json` |
-| Ponderaciones y fechas de admisión | `admision.json` |
-| Perfil de egreso | `perfil.json` |
-| Preguntas frecuentes | `faq.json` |
-| Testimonios | `testimonios.json` |
-| Fuentes (sección Referencias) | `referencias.json` |
+| Lo de la portada (título, duración, vacantes) | `carrera.json` |
+| Los párrafos de cada sección | `bloques.json` |
+| Los ramos de la malla | `malla.json` |
+| Empleabilidad, sueldos y áreas de trabajo | `campo-laboral.json` |
+| La comparación con otras carreras | `comparacion.json` e `indicadores-mifuturo.json` |
+| Ponderaciones y fechas de postulación | `admision.json` |
+| El perfil de egreso | `perfil.json` |
+| Las preguntas frecuentes | `faq.json` |
+| Los testimonios | `testimonios.json` |
+| Las fuentes (sección Referencias) | `referencias.json` |
 
-**Paso a paso para cambiar un dato:**
+### Pasos
 
-1. Abre el archivo en GitHub y presiona el ícono del lápiz (✏️ *Edit*).
-2. Cambia solo el texto que está entre comillas, por ejemplo `"valor": "150"` → `"valor": "160"`.
-3. Si el dato viene de una fuente nueva, agrégala en `referencias.json` y escribe su ID (por ejemplo `"F13"`) en el campo `cita`.
-4. Presiona *Commit changes*. En unos 2 minutos, Netlify publica la página actualizada.
+1. Entra al archivo en GitHub y aprieta el lápiz.
+2. Cambia solo lo que está entre comillas. Por ejemplo, `"valor": "150"` pasa a `"valor": "160"`.
+3. Si el dato sale de una fuente nueva, agrégala primero en `referencias.json` con un id nuevo (por ejemplo `"F13"`) y después pon ese id en el campo `cita` del dato.
+4. Aprieta *Commit changes*. En un par de minutos Netlify publica la página actualizada.
 
-**Reglas que el sistema revisa solo.** Si una regla no se cumple, la página **no se publica** y Netlify muestra el error:
-- Todo dato debe tener una cita (`"cita": "F01"`) que exista en `referencias.json`.
-- Las cifras deben indicar el año (4 dígitos).
-- Las ponderaciones deben sumar 100 %.
-- No puede quedar la palabra `TODO` en ningún texto.
+### Ojo: la página no se publica si...
 
-## 2. Cómo ver la página en tu computador
+Para que no se suba información incompleta por error, el sistema revisa algunas cosas antes de publicar. Si algo falla, Netlify muestra el error y la página anterior sigue igual. No se publica si:
 
-Necesitas tener instalado [Node.js](https://nodejs.org/) versión 24 o superior.
+- un dato no tiene cita, o la cita usa un id que no está en `referencias.json`;
+- una cifra no dice de qué año es;
+- las ponderaciones no suman 100 %;
+- quedó escrita la palabra `TODO` en algún texto.
+
+---
+
+## Cómo abrir la página en tu computador
+
+Necesitas [Node.js](https://nodejs.org/) versión 24 o más nueva. En una terminal, dentro de la carpeta del proyecto:
 
 ```bash
-npm install        # instala Astro (solo la primera vez)
+npm install        # instala lo necesario (solo la primera vez)
 npm run dev        # abre la página en http://localhost:4321
-npm run build      # genera la versión final en la carpeta dist/
-npm run check      # revisa los tipos de TypeScript
+npm run build      # arma la versión final en la carpeta dist/
+npm run check      # revisa que no haya errores de tipos
 ```
 
-## 3. Cómo se publica
+---
 
-El repositorio está conectado a **Netlify**. Cada vez que se guarda un cambio en la rama `main`, Netlify ejecuta `npm run build` y publica la carpeta `dist/`. La configuración está en `netlify.toml`.
+## Dónde está publicada
 
-Después del primer despliegue, hay que reemplazar la URL de ejemplo en **`astro.config.mjs`** (opción `site`) y en **`public/robots.txt`**.
+La página está en **Netlify**, conectada a este repositorio. Cada vez que se sube un cambio a la rama `main`, Netlify vuelve a armar y publicar la página sola. La configuración está en `netlify.toml`.
 
-## 4. Estructura del proyecto
+Si la página cambia de dirección, hay que actualizar la URL en `astro.config.mjs` (en `site`) y en `public/robots.txt`.
+
+---
+
+## Qué hay en cada carpeta
 
 ```
 src/
-  content/            # datos editables (JSON)
-  content.config.ts   # esquemas: las reglas que debe cumplir cada dato
-  components/         # una sección por archivo (Hero, Malla, Admision...)
-  layouts/
-    BaseLayout.astro  # <head>, SEO, barra superior y pie
-  lib/contenido.ts    # funciones de apoyo
-  pages/
-    index.astro       # la página: une las secciones en orden
-    sitemap.xml.ts    # genera el sitemap
-  styles/global.css   # estilos (colores UTEM)
-public/               # favicon, imagen para redes, robots.txt, llms.txt
-docs/                 # wireframes y anexos del informe
-INFORME.md            # informe del proyecto
+  content/            datos y textos de la página (los .json)
+  content.config.ts   reglas que tiene que cumplir cada dato
+  components/         una sección de la página por archivo
+  layouts/            estructura común (encabezado, menú y pie)
+  lib/                funciones de apoyo
+  pages/              la página principal y el sitemap
+  styles/             colores y estilos
+public/               ícono, imagen para redes sociales, robots.txt y llms.txt
+docs/                 wireframes y gráficos de la encuesta (para el informe)
+INFORME.md            informe del proyecto
 ```
